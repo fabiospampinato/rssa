@@ -1,0 +1,3 @@
+
+☐ Make charts out of the history
+☐ Add support for websites that require you to be logged in or something, without using `headless: true`

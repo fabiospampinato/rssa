@@ -1,0 +1,22 @@
+{
+  "cache": {
+    "path": ".cache",
+    "enabled": false
+  },
+  "feeds": {
+    "path": "../../feeds"
+  },
+  "fetch": {
+    "headless": false,
+    "chrome_path": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome"
+  },
+  "history": {
+    "path": "history.json"
+  },
+  "report": {
+    "active": "txt",
+    "save": false,
+    "path": "reports",
+    "name": "[year][month][day]-[hour][minute][second]"
+  }
+}
