@@ -1,11 +1,11 @@
 {
   "name": "rssa",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "RSS-Anything, get updates about anything you can reach with an url. Like RSS, but for anything.",
   "bin": "out/src/index.js",
   "main": "out/src/index.js",
   "scripts": {
-    "prepublish": "npm run compile",
+    "prepublish": "tsc -p ./",
     "compile": "tsc -watch -p ./",
     "clean:cache": "rimraf .cache",
     "clean:reports": "rimraf reports",
@@ -38,6 +38,7 @@
     "cheerio": "^1.0.0-rc.2",
     "lodash": "^4.17.4",
     "mkdirp": "^0.5.1",
+    "node-cmd": "^3.0.0",
     "open": "0.0.5",
     "pify": "^3.0.0",
     "request": "^2.81.0",

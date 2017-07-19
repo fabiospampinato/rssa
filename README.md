@@ -14,7 +14,7 @@ This is how it works:
 ## Install
 
 ```shell
-$ npm install --save --global rssa
+$ npm install --global rssa
 ```
 
 ## Configuration
@@ -92,7 +92,7 @@ module.exports.feeds = { // Feeds object
 After having installed RSSA you will want to make a folder for it somewhere, in there you'll put your custom `config.json` and `feeds.js` files, then just call RSSA like this:
 
 ```bash
-rssa --config /path/to/config --feeds /path/to/feeds.js
+rssa --config /path/to/config
 ```
 
 That's all! Check out what an actual report could look like, given the bundled [config.json](https://github.com/fabiospampinato/rssa/master/config.json) and [feeds.js](https://github.com/fabiospampinato/rssa/master/feeds.js]) files:
@@ -102,7 +102,7 @@ That's all! Check out what an actual report could look like, given the bundled [
 ## Hints
 
 - **Colors**: you may use [chalk](https://github.com/chalk/chalk) for styling your templates.
-- **Alias**: if you use bash you can alias it for convenience, for instance you might want to add this to your `~/.bash_profile`: `alias updateme="rssa --config /path/to/config --feeds /path/to/feeds.js`. Then simply run `updateme` to get a report.
+- **Alias**: if you use bash you can alias it for convenience, for instance you might want to add this to your `~/.bash_profile`: `alias updateme="rssa --config /path/to/config`. Then simply run `updateme` to get a report.
 - **Multiple aliases**: you might want to create multiple feeds for RSS, then run each of them separately, so that you can have aliases like `up-stocks`, `up-social` or anything you can think of.
 - **Cronjob**: set a cronjob to run RSSA every hour or so to always have fresh reports to read.
 - **Cloud sync**: make it output the reports to your Dropbox folder, so that you can check them even without having access to your terminal.
