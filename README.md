@@ -67,10 +67,11 @@ module.exports.feeds = { // Feeds object
       qux: ['.my-class', val => `${val}!`], // Optional callback for transforming the token
     },
     filter: ( tokens, tokensOld ) => !tokensOld || tokens.value !== tokensOld.value, // If it returns false the current feed won't be displayed, it's called with the current tokens and those from the last run
-    template: ( tokens, tokensOld ) => '[foo]/[bar] ([baz]) [old:value] -> [value]', // Function called with the current tokens and the previous ones that returns the string used for rendering the feed, [token] will be replaced with token's value, [old:token] references the old token.
+    template: '[foo]/[bar] ([baz]) [old:value] -> [value]', // String that will be used to render the feed. [token] will be replaced with token's value, [old:token] references the old token.
+    template: ( tokens, tokensOld ) => '[foo]/[bar] ([baz]) [old:value] -> [value]', // A template can also be a function, in that case it will be called with the current tokens and those from the last run
     templates: { // If you use more than one reporter you may define a template for each of them
-      txt: () => '', // Template used by the `txt` reporter
-      html: () => '' // Template used by the `html` reporter
+      txt: '', // Template used by the `txt` reporter
+      html: '' // Template used by the `html` reporter
     }
     feed: 'http://www.example.com', // Single feed
     feeds: [ // Array of feeds
