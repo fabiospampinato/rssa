@@ -23,7 +23,7 @@ RSSA is configured via a JSON configuration file, you can supply your own via `r
 
 This is what it looks like:
 
-```json
+```js
 {
   "cache": { // RSSA supports caching, probably only useful for not having to wait network delays while developing it
     "path": "/path/to/cache", // Where to store the cached pages
