@@ -33,13 +33,13 @@ class txt extends abstract {
 
     if ( this.lastUpdate ) {
 
-      const date = new Date ( this.lastUpdate ).toUTCString ();
+      const date = new Date ( this.lastUpdate ).toString ();
 
       this.renderLine ( c.cyan ( `Prev update time: ${date}` ) );
 
     }
 
-    const date = new Date ().toUTCString ();
+    const date = new Date ().toString ();
 
     this.renderLine ( c.cyan ( `Curr update time: ${date}` ) );
 

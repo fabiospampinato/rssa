@@ -24,13 +24,13 @@ class html extends abstract {
 
     if ( this.lastUpdate ) {
 
-      const date = new Date ( this.lastUpdate ).toUTCString ();
+      const date = new Date ( this.lastUpdate ).toString ();
 
       this.renderLine ( `Prev update time: ${date}`, 'p' );
 
     }
 
-    const date = new Date ().toUTCString ();
+    const date = new Date ().toString ();
 
     this.renderLine ( `Curr update time: ${date}`, 'p' );
 
