@@ -49,19 +49,25 @@ class html extends abstract {
       if ( config.filter && !config.filter ( this.tokensAll[config.url], this.tokensAllOld[config.url], this.tokensAll ) ) return;
 
       const template = this._getTemplate ( config, 'html', 'txt' ),
-            line = this._parseTemplate ( template, this.tokensAll[config.url], this.tokensAllOld[config.url], this.tokensAll );
+            lines = this._parseTemplate ( template, this.tokensAll[config.url], this.tokensAllOld[config.url], this.tokensAll );
 
-      this.renderLine ( line, 'p', depth );
+      this.renderLines ( lines, 'p', depth );
 
     });
 
   }
 
-  renderLine ( str = '', tag = 'span', depth = 0, spaces = 4 ) {
+  renderLines ( lines, ...args ) {
+
+    lines.forEach ( line => this.renderLine ( line, ...args ) );
+
+  }
+
+  renderLine ( line = '', tag = 'span', depth = 0, spaces = 4 ) {
 
     const indentation = _.repeat ( _.repeat ( '\u00A0', spaces ), depth ); // Avoiding space collapse
 
-    this.rendered += `<${tag}>${indentation}${str}</${tag}>`;
+    this.rendered += `<${tag}>${indentation}${line}</${tag}>`;
 
   }
 

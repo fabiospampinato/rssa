@@ -69,6 +69,7 @@ module.exports.feeds = { // Feeds object
     filter: ( tokens, tokensOld ) => !tokensOld || tokens.value !== tokensOld.value, // If it returns false the current feed won't be displayed, it's called with the current tokens and those from the last run
     template: '[foo]/[bar] ([baz]) [old:value] -> [value]', // String that will be used to render the feed. [token] will be replaced with token's value, [old:token] references the old token.
     template: ( tokens, tokensOld ) => '[foo]/[bar] ([baz]) [old:value] -> [value]', // A template can also be a function, in that case it will be called with the current tokens and those from the last run
+    template: ['Row 1', 'Row 2'] // A template can also return an array
     templates: { // If you use more than one reporter you may define a template for each of them
       txt: '', // Template used by the `txt` reporter
       html: '' // Template used by the `html` reporter

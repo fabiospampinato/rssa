@@ -58,11 +58,17 @@ class txt extends abstract {
       if ( config.filter && !config.filter ( this.tokensAll[config.url], this.tokensAllOld[config.url], this.tokensAll ) ) return;
 
       const template = this._getTemplate ( config, 'txt' ),
-            line = this._parseTemplate ( template, this.tokensAll[config.url], this.tokensAllOld[config.url], this.tokensAll );
+            lines = this._parseTemplate ( template, this.tokensAll[config.url], this.tokensAllOld[config.url], this.tokensAll );
 
-      this.renderLine ( line, depth );
+      this.renderLines ( lines, depth );
 
     });
+
+  }
+
+  renderLines ( lines, ...args ) {
+
+    lines.forEach ( line => this.renderLine ( line, ...args ) );
 
   }
 

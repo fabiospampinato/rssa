@@ -82,18 +82,21 @@ class abstract {
 
   _parseTemplate ( template, tokens, tokensOld, tokensAll ) {
 
-    let parsed = _.isFunction ( template ) ? template ( tokens, tokensOld, tokensAll ) : template;
+    let lines = _.isFunction ( template ) ? template ( tokens, tokensOld, tokensAll ) : template;
+
+    lines = _.castArray ( lines );
+    lines = lines.filter ( _.identity );
 
     _.forOwn ( tokens, ( value, key ) => {
 
-      parsed = this._replaceTokens ( parsed, {
+      lines = lines.map ( line => this._replaceTokens ( line, {
         [`${key}`]: value,
         [`old:${key}`]: tokensOld && tokensOld.hasOwnProperty ( key ) ? tokensOld[key] : '-'
-      });
+      }));
 
     });
 
-    return parsed;
+    return lines;
 
   }
 
