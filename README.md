@@ -52,7 +52,7 @@ This is what it looks like:
 
 Feeds describe what will be shown in your reports, it's basically a node.js module that exports a `feeds` item describing which urls to fetch, how to extract the information from them and how to display that information.
 
-Feeds can be deeply nested within groups, and their configuration inherits from their parent, so you if have 2 ore more urls sharing the same tokens, templates and filter function simply wrap them into a group and move those fields in there.
+Feeds can be deeply nested within groups, and their configuration inherits from their parent, so you if have 2 or more urls sharing the same tokens, templates and filter function simply wrap them into a group and move those fields in there.
 
 This is what it looks like:
 
