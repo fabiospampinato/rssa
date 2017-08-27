@@ -57,9 +57,9 @@ class html extends abstract {
 
   }
 
-  renderLines ( lines, ...args ) {
+  renderLines ( lines, tag?, depth?, spaces? ) {
 
-    lines.forEach ( line => this.renderLine ( line, ...args ) );
+    lines.forEach ( line => this.renderLine ( line, tag, depth, spaces ) );
 
   }
 

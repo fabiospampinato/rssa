@@ -66,9 +66,9 @@ class txt extends abstract {
 
   }
 
-  renderLines ( lines, ...args ) {
+  renderLines ( lines, depth?, spaces? ) {
 
-    lines.forEach ( line => this.renderLine ( line, ...args ) );
+    lines.forEach ( line => this.renderLine ( line, depth, spaces ) );
 
   }
 
