@@ -38,7 +38,9 @@ const Extract = {
 
     if ( _.isRegExp ( extractor ) ) {
 
-      value = page.match ( extractor )[1];
+      const parts = page.match ( extractor );
+
+      value = parts ? parts[1] : null;
 
     } else if ( _.isString ( extractor ) ) {
 
