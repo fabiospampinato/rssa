@@ -97,7 +97,7 @@ After having installed RSSA you will want to make a folder for it somewhere, in 
 rssa --config /path/to/config
 ```
 
-That's all! Check out what an actual report could look like, given the bundled [config.json](https://github.com/fabiospampinato/rssa/master/config.json) and [feeds.js](https://github.com/fabiospampinato/rssa/master/feeds.js]) files:
+That's all! Check out what an actual report could look like, given the bundled [config.json](https://github.com/fabiospampinato/rssa/blob/master/config.json) and [feeds.js](https://github.com/fabiospampinato/rssa/blob/master/feeds.js) files:
 
 ![Demo](resources/demo.png)
 
