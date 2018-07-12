@@ -36,9 +36,9 @@
     "absolute": "0.0.1",
     "chalk": "^2.0.1",
     "cheerio": "^1.0.0-rc.2",
+    "execa": "^0.10.0",
     "lodash": "^4.17.4",
     "mkdirp": "^0.5.1",
-    "node-cmd": "^3.0.0",
     "open": "0.0.5",
     "pify": "^3.0.0",
     "request": "^2.81.0",
@@ -46,5 +46,9 @@
     "rimraf": "^2.6.1",
     "sha1": "^1.1.1",
     "yargs": "^8.0.2"
+  },
+  "devDependencies": {
+    "hard-rejection": "^1.0.0",
+    "typescript": "~2.5.2"
   }
 }

@@ -1,7 +1,7 @@
 
 /* IMPORT */
 
-import * as cmd from 'node-cmd';
+import * as execa from 'execa';
 import * as pify from 'pify';
 import * as request from 'request';
 import Cache from './cache';
@@ -13,7 +13,9 @@ const Fetch = {
 
   async headless ( url: string ) { // With JS
 
-    return pify ( cmd.get )( `${config.fetch.chrome_path} --headless --disable-gpu --dump-dom ${url}` );
+    const {stdout} = await execa.shell ( `${config.fetch.chrome_path} --headless --disable-gpu --dump-dom ${url}` );
+
+    return stdout;
 
   },
 
