@@ -1,6 +1,6 @@
 {
   "name": "rssa",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "RSS-Anything, get updates about anything you can reach with an url. Like RSS, but for anything.",
   "bin": "out/src/index.js",
   "main": "out/src/index.js",
