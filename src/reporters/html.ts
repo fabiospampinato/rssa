@@ -46,6 +46,8 @@ class html extends abstract {
 
     }, ( feed, config, depth ) => {
 
+      if ( !this.tokensAll[config.url] ) return;
+
       if ( config.filter && !config.filter ( this.tokensAll[config.url], this.tokensAllOld[config.url], this.tokensAll ) ) return;
 
       const template = this._getTemplate ( config, 'html', 'txt' ),

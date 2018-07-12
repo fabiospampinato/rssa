@@ -7,6 +7,9 @@ import {abstract} from './abstract';
 import config from '../config';
 import Utils from '../utils';
 
+//TODO: `log` should be a separate renderer
+//TODO: Multiple renderer at once should be supported
+
 /* TXT */
 
 class txt extends abstract {
@@ -54,6 +57,8 @@ class txt extends abstract {
       this.renderLine ( group.name, depth );
 
     }, ( feed, config, depth ) => {
+
+      if ( !this.tokensAll[config.url] ) return;
 
       if ( config.filter && !config.filter ( this.tokensAll[config.url], this.tokensAllOld[config.url], this.tokensAll ) ) return;
 

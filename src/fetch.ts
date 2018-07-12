@@ -13,9 +13,17 @@ const Fetch = {
 
   async headless ( url: string ) { // With JS
 
-    const {stdout} = await execa.shell ( `${config.fetch.chrome_path} --headless --disable-gpu --dump-dom ${url}` );
+    try {
 
-    return stdout;
+      const {stdout} = await execa.shell ( `${config.fetch.chrome_path} --headless --disable-gpu --dump-dom ${url}` );
+
+      return stdout;
+
+    } catch ( e ) {
+
+      return;
+
+    }
 
   },
 
@@ -25,9 +33,17 @@ const Fetch = {
       'User-Agent': 'rssa' // Required by some APIs (ie. GitHub)
     };
 
-    const response = await pify ( request )({ url, headers });
+    try {
 
-    return response.toJSON ().body;
+      const response = await pify ( request )({ url, headers });
+
+      return response.toJSON ().body;
+
+    } catch ( e ) {
+
+      return;
+
+    }
 
   },
 
@@ -40,7 +56,7 @@ const Fetch = {
     const fetcher = headless ? Fetch.headless : Fetch.basic,
           page = await fetcher ( url );
 
-    Cache.write ( url, page );
+    if ( page ) Cache.write ( url, page );
 
     return page;
 

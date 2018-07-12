@@ -12,8 +12,11 @@ const Extract = {
   async page ( options ) {
 
     const {url, tokens, headless} = options,
-          page = await Fetch.do ( url, headless ),
-          $ = cheerio['load'] ( page );
+          page = await Fetch.do ( url, headless );
+
+    if ( !page ) return;
+
+    const $ = cheerio['load']( page );
 
     return Extract.tokens ( page, $, tokens );
 
