@@ -141,6 +141,12 @@ class abstract {
 
       this.tokensAll[url] = await this.tokensAll[url];
 
+      if ( _.isEmpty ( this.tokensAll ) ) {
+
+        delete this.tokensAll[url];
+
+      }
+
     }
 
   }
