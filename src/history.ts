@@ -43,7 +43,7 @@ const History = {
 
     if ( !history[url] || !history[url].length ) return;
 
-    return _.last ( history[url] );
+    return _.findLast ( history[url], val => val && val['tokens'] );
 
   }
 
