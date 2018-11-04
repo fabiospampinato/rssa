@@ -35,8 +35,6 @@ Thumbs.db
 bower_components
 node_modules
 package-lock.json
-
-# Project specific paths ignore
 out
 history.json
 reports
